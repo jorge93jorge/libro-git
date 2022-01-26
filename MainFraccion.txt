@@ -1,0 +1,42 @@
+package fraccion;
+
+import java.util.Scanner;
+
+public class MainFraccion {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		// TODO Auto-generated method stub
+		
+		// Primera fraccion
+		System.out.println("introduce el numenador de la primera fraccion");
+		int numerador1=sc.nextInt();
+		System.out.println("introduce el denominador de la primera fraccion");
+		int denominador1=sc.nextInt();
+		
+		
+		//segunda fraccion
+		System.out.println("introduce el numenador de la segunda fraccion");
+		int numerador2=sc.nextInt();
+		System.out.println("introduce el denominador de la segunda fraccion");
+		int denominador2=sc.nextInt();
+		
+ Fraccion f1=new Fraccion(numerador1,denominador1);
+ System.out.println("la fraccion es: " +f1.toString());
+ 
+ 
+ Fraccion f2=new Fraccion(numerador2,denominador2);
+ System.out.println("la fraccion es: " +f2.toString());
+ 
+ 
+ f1.suma(f2);
+ 
+ f1.division(f2);
+ 
+ sc.close();
+ 
+ 
+ 
+	}
+
+}

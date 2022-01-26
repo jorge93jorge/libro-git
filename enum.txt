@@ -1,0 +1,5 @@
+package fraccion;
+
+public enum Signo {POSITIVA, NEGATIVA;
+
+}

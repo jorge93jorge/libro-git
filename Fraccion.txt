@@ -1,0 +1,103 @@
+package fraccion;
+import java.util.Scanner;
+public class Fraccion {
+private Integer numerador;
+private Integer denominador;
+
+private Signo signo;
+
+
+Scanner sc=new Scanner(System.in);
+
+
+//_----------------Constructores--------------
+public Fraccion(Integer numerador, Integer denominador) {
+	if (numerador*denominador<0) {
+		signo=Signo.NEGATIVA;
+	}
+	if (numerador*denominador>=0) {
+		signo=Signo.POSITIVA;
+	}
+	this.numerador = numerador;
+	while (denominador.equals(0)) {
+		System.out.println("El denominador no puede ser 0, vuelve a introducirlo");
+		denominador=sc.nextInt();
+	}
+	this.denominador = denominador;
+}
+
+
+// ------------GET----------------
+
+public Integer getNumerador() {
+	return numerador;
+}
+
+
+public Integer getDenominador() {
+	return denominador;
+}
+
+
+public Signo getSigno() {
+	return signo;
+}
+
+//---------Suma resta multiplicacion division--------
+
+public void suma(Fraccion f2) {
+	if (this.denominador!=f2.denominador) {
+		System.out.println("no se suman porque el denominador no es igual");
+	}
+	else {
+	this.numerador=this.numerador+f2.numerador;
+	System.out.println("la suma es " +toString());
+	
+     
+	}
+}
+
+
+public void resta(Fraccion f2) {
+	if (this.denominador!=f2.denominador) {
+		System.out.println("no se restar porque el denominador no es igual");
+	}
+	else {
+	this.numerador=this.numerador-f2.numerador;
+	System.out.println("la resta es " +toString());
+	
+     
+	}
+}
+
+public void multiplicacion(Fraccion f2) {
+	this.numerador= this.numerador*f2.numerador;
+	this.denominador= this.denominador*f2.denominador;
+	System.out.println("la multiplicacion es: " +toString());
+	
+}
+
+public void division(Fraccion f2) {
+	this.numerador= this.numerador*f2.denominador;
+	this.denominador= this.denominador*f2.numerador;
+	System.out.println("la multiplicacion es: " +toString());
+	
+}
+
+
+
+
+public String toString() {
+String numerador=String.valueOf(this.numerador);
+String denominador=String.valueOf(this.denominador);
+String fraccionstring=numerador+"/"+denominador;
+return fraccionstring;
+
+
+
+
+
+}
+
+
+}
