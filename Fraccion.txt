@@ -40,6 +40,18 @@ public Integer getDenominador() {
 
 
 public Signo getSigno() {
+	
+	if (numerador*denominador<0) {
+		signo=Signo.NEGATIVA;
+		
+		
+	}
+	if (numerador*denominador>=0) {
+		signo=Signo.POSITIVA;
+		
+		
+	}
+	
 	return signo;
 }
 
@@ -88,9 +100,11 @@ public void division(Fraccion f2) {
 
 
 public String toString() {
+
+
 String numerador=String.valueOf(this.numerador);
 String denominador=String.valueOf(this.denominador);
-String fraccionstring=numerador+"/"+denominador;
+String fraccionstring=String.valueOf(getSigno())+"  "+numerador+"/"+denominador;
 return fraccionstring;
 
 
